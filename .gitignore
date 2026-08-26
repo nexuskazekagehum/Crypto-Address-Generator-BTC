@@ -1,0 +1,15 @@
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.vscode/
+.idea/
+*.log
+*.tmp
+*.env
+secrets.json
+coverage/
+TestResults/
+*.nupkg
+packages/
