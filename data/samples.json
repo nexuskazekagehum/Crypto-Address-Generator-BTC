@@ -1,0 +1,16 @@
+{
+  "project": "Crypto-Address-Generator-BTC",
+  "environment": "simulation",
+  "samples": [
+    {
+      "id": "sample-1",
+      "createdAt": "2026-08-24T00:00:00Z",
+      "value": 1234.56
+    },
+    {
+      "id": "sample-2",
+      "createdAt": "2026-08-24T01:00:00Z",
+      "value": 987.65
+    }
+  ]
+}
