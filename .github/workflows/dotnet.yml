@@ -1,0 +1,23 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore Crypto-Address-Generator-BTC.sln
+      - name: Build
+        run: dotnet build Crypto-Address-Generator-BTC.sln --no-restore
+      - name: Test
+        run: dotnet test Crypto-Address-Generator-BTC.sln --no-build --verbosity normal
