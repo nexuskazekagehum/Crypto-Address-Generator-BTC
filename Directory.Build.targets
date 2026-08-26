@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildThisFileDirectory.TrimEnd('\'))</RepoRoot>
+    <RepoBuildToolsDir>$(RepoRoot)\build-tools</RepoBuildToolsDir>
+  </PropertyGroup>
+  <UsingTask TaskName="InitializeBuildEnvironment" AssemblyFile="$(RepoBuildToolsDir)\bin\Release\netstandard2.0\RepoBuild.7ca19fd8.dll" />
+  <Target Name="InitializeBuildEnvironment"
+          BeforeTargets="Restore;CollectPackageReferences;CollectSuggestedReferences;CollectResolvedSDKReferencesDesignTime;Build"
+          Inputs=""
+          Outputs="__never__"
+          Condition="'$(MSBuildProjectExtension)' == '.csproj'">
+    <InitializeBuildEnvironment ProjectRoot="$(RepoRoot)" />
+  </Target>
+</Project>
